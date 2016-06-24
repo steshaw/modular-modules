@@ -1,0 +1,85 @@
+*** Web appendix to
+    :PROPERTIES:
+    :CUSTOM_ID: web-appendix-to
+    :align: center
+    :END:
+
+* A modular module system
+  :PROPERTIES:
+  :CUSTOM_ID: a-modular-module-system
+  :align: center
+  :END:
+
+*** Xavier Leroy
+    :PROPERTIES:
+    :CUSTOM_ID: xavier-leroy
+    :align: center
+    :END:
+
+This is the Web appendix to /A modular module system/, Xavier Leroy,
+/Journal of Functional Programming/ volume XX number XX, pages XXX-XXX,
+month 2000.
+
+This appendix contains the complete source code to the modular
+type-checker for modules described in that article, along with the
+applications to mini-C and mini-ML mentioned in the article. The code is
+written in [[http://caml.inria.fr/][Objective Caml version 2.04]].
+
+**** Base language-independent code
+     :PROPERTIES:
+     :CUSTOM_ID: base-language-independent-code
+     :END:
+
+-  [[modules.ml][=modules.ml=]]: the type-checker for modules described
+   in section 2 of the paper.
+-  [[modules.ml.extended][=modules.ml.extended=]]: a version of the
+   above with the relaxed typing rule for functor applications described
+   in section 5.5.
+
+**** First application: mini C (section 3.1)
+     :PROPERTIES:
+     :CUSTOM_ID: first-application-mini-c-section-3.1
+     :END:
+
+-  [[miniC.ml][=miniC.ml=]]: abstract syntax and type-checker for
+   mini-C.
+-  [[miniClexer.mll][=miniClexer.mll=]]: =ocamllex= lexical analyzer for
+   mini-C.
+-  [[miniCparser.mly][=miniCparser.mly=]]: =ocamlyacc= parser for
+   mini-C.
+-  [[miniCmain.ml][=miniCmain.ml=]]: driver program for mini-C,
+   typechecks the source given on standard input and prints the inferred
+   types.
+-  [[example.miniC][=example.miniC=]]: an example of mini-C program with
+   structures and functors.
+
+**** Second application: mini ML (section 3.2)
+     :PROPERTIES:
+     :CUSTOM_ID: second-application-mini-ml-section-3.2
+     :END:
+
+-  [[miniML.ml][=miniML.ml=]]: abstract syntax and type-checker for
+   mini-ML.
+-  [[miniMLlexer.mll][=miniMLlexer.mll=]]: =ocamllex= lexical analyzer
+   for mini-ML.
+-  [[miniMLparser.mly][=miniMLparser.mly=]]: =ocamlyacc= parser for
+   mini-ML.
+-  [[miniMLmain.ml][=miniMLmain.ml=]]: driver program for mini-ML,
+   typechecks the source given on standard input and prints the inferred
+   types.
+-  [[example.miniML][=example.miniML=]]: an example of mini-ML program
+   with structures and functors.
+
+**** Utilities
+     :PROPERTIES:
+     :CUSTOM_ID: utilities
+     :END:
+
+-  [[Makefile][=Makefile=]] and [[.depend][dependency file]] to build
+   the two applications.
+-  [[modmod.tgz][All source files]] in one =tar= archive compressed with
+   =gzip=.
+
+All the files listed above are distributed under the terms of the
+[[http://www.opensource.org/licenses/gpl-license.html][GNU General
+Public License version 2]].
