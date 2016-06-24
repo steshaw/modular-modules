@@ -1,0 +1,10 @@
+*.cmi
+*.cmo
+/miniC
+/miniClexer.ml
+/miniCparser.ml
+/miniCparser.mli
+/miniML
+/miniMLlexer.ml
+/miniMLparser.ml
+/miniMLparser.mli
